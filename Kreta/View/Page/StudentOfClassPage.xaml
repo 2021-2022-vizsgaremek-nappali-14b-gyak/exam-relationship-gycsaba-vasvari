@@ -5,8 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Kreta.View.Page"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="800" d:DesignWidth="1024">
+    <StackPanel Orientation="Vertical" Margin="30">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock Margin="5">Válassza ki az osztályt:</TextBlock>
+                <ComboBox x:Name="cbClasses" Margin="5"></ComboBox>
+                <TextBlock Margin="5">Az osztály tanulói</TextBlock>
+                <ListBox x:Name="lbStudents" Margin="5"></ListBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock Margin="5">Nem besorolt diákok kezelése:</TextBlock>
+                <Button Margin="5" x:Name="btStudentNoClass" Content="Nem besorolt diákok" />
+                <ListBox Margin="5" x:Name="lbStudentNoClass"></ListBox>
+                <Button Margin="5" x:Name="btStudentToClass" Content="Kiválasztott diák hozzáadása" />
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
 </UserControl>
