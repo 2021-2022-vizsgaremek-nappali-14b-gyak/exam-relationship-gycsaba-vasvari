@@ -10,9 +10,13 @@
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical" Margin="10">
                 <TextBlock Margin="5">Válassza ki az osztályt:</TextBlock>
-                <ComboBox x:Name="cbClasses" Margin="5"></ComboBox>
+                <ComboBox x:Name="cbClasses" Margin="5"
+                          ItemsSource="{Binding Classes}"
+                />
                 <TextBlock Margin="5">Az osztály tanulói</TextBlock>
-                <ListBox x:Name="lbStudents" Margin="5"></ListBox>
+                <ListBox x:Name="lbStudents" Margin="5"
+                         ItemsSource="{Binding StudentsOfClass}"
+                />
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10">
                 <TextBlock Margin="5">Nem besorolt diákok kezelése:</TextBlock>
