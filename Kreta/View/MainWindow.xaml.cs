@@ -33,5 +33,10 @@ namespace Kreta
         {
             this.Close();
         }
+
+        private void miStudentOfClass_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

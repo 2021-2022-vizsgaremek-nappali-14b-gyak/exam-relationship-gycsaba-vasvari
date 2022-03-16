@@ -21,6 +21,9 @@
                 <MenuItem x:Name="miStatistics" Header="Iskolai statisztika" Click="miStatistics_Click"></MenuItem>
                 <MenuItem x:Name="miClassStatistics" Header="Osztály statisztika"></MenuItem>
             </MenuItem>
+            <MenuItem Header="Adminisztráció">
+                <MenuItem x:Name="miStudentOfClass" Header="Osztályok tanulói" Click="miStudentOfClass_Click"></MenuItem>
+            </MenuItem>
 
         </Menu>
         <Grid x:Name="Content" VerticalAlignment="Top" Width="1024" Height="750">
