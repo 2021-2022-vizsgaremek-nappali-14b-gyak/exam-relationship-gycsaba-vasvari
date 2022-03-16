@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Kreta.Models;
 
-namespace Kreta.Models.Relationship
+namespace Kreta.Repositories
 {
     public class ClassesRepo
     {
