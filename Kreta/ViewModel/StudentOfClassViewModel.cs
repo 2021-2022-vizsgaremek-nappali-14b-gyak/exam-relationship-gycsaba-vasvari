@@ -38,7 +38,7 @@ namespace Kreta.ViewModel
             }
         }
 
-        public ObservableCollection<string> StudentsOfClass
+        public ObservableCollection<Student> StudentsOfClass
         {
             get { return studentsOfClass; }
         }
