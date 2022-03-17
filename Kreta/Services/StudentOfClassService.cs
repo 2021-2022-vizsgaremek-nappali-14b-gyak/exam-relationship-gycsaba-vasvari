@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Kreta.Repositories;
+using Kreta.Models;
 
 namespace Kreta.Services
 {
@@ -19,11 +20,11 @@ namespace Kreta.Services
             studentsRepo = new StudentsRepo();
         }
 
-        public List<string> Classes
+        public List<Class> Classes
         {
             get 
             {
-                return classesRepo.Classes.Select(schoolClass => schoolClass.GradeGradeType).ToList();
+                return classesRepo.Classes;
             }
         }
 
