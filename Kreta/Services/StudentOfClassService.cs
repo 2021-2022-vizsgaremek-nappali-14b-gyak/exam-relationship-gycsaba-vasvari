@@ -22,8 +22,8 @@ namespace Kreta.Services
         public List<string> Classes
         {
             get 
-            { 
-               return classesRepo.Classes.FindAll(classes => classes.GradeGradeType!=string.Empty).
+            {
+                return classesRepo.Classes.Select(schoolClass => schoolClass.GradeGradeType).ToList();
             }
         }
 
