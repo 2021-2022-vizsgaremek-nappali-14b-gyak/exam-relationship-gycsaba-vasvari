@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 using System.Collections.ObjectModel;
 using Kreta.Services;
+using ViewModels.BaseClass;
+
 
 namespace Kreta.ViewModel
 {
-    public class StudentOfClassViewModel
+    public class StudentOfClassViewModel : ViewModelBase
     {
         private ObservableCollection<string> classes;
         private ObservableCollection<string> studentsOfClass;
