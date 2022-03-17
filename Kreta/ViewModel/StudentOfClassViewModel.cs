@@ -15,7 +15,7 @@ namespace Kreta.ViewModel
     public class StudentOfClassViewModel : ViewModelBase
     {
         private ObservableCollection<SchoolClass> classes;
-        private ObservableCollection<string> studentsOfClass;
+        private ObservableCollection<Student> studentsOfClass;
         private StudentOfClassService studentOfClassService;
 
         private int selectedIndex;
@@ -25,7 +25,7 @@ namespace Kreta.ViewModel
             selectedIndex = 0;
             studentOfClassService = new StudentOfClassService();
             classes = new ObservableCollection<SchoolClass>();            
-            studentsOfClass = new ObservableCollection<string>();
+            studentsOfClass = new ObservableCollection<Student>();
         }
 
         public ObservableCollection<SchoolClass> Classes
