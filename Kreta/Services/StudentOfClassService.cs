@@ -20,7 +20,7 @@ namespace Kreta.Services
             studentsRepo = new StudentsRepo();
         }
 
-        public List<Class> Classes
+        public List<SchoolClass> Classes
         {
             get 
             {
