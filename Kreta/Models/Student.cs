@@ -16,12 +16,12 @@ namespace Kreta.Models
         {
             this.Id = id;
             this.Fullname = fullname;
-            this.OsztalyId = osztalyId;
+            this.SchoolClassId = osztalyId;
         }
 
         public int Id { get => id; set => id = value; }
         public string Fullname { get => fullname; set => fullname = value; }
-        public int OsztalyId { get => osztalyId; set => osztalyId = value; }
+        public int SchoolClassId { get => osztalyId; set => osztalyId = value; }
 
         public string IdFullname
         {
@@ -33,7 +33,7 @@ namespace Kreta.Models
 
         public override string ToString()
         {
-            string output = "Tanulók adatai: " + id + " "+fullname;
+            string output = id+". "+ fullname;
             return output;
         }
     }

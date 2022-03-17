@@ -24,7 +24,7 @@ namespace Kreta.Services
 
         public int GetNumberOfStudents()
         {
-            return studentsRepo.Studentss.Count;
+            return studentsRepo.Students.Count;
         }
 
         public Dictionary<string, int> GetStudentPerClasses()
@@ -37,7 +37,7 @@ namespace Kreta.Services
                 int classId = schoolClass.Id;
                 // Az adott osztály diákjainak száma
                 int numberOfStuntInSchoolClass =
-                    studentsRepo.Studentss.FindAll(student => student.Id == classId).Count;
+                    studentsRepo.Students.FindAll(student => student.Id == classId).Count;
                 // Egy bejegyzés a dictionary
                 studentPerClasses.Add(schoolClass.GradeGradeType, numberOfStuntInSchoolClass);
             }

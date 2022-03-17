@@ -15,7 +15,7 @@ namespace Kreta.ViewModel
     public class StudentOfClassViewModel : ViewModelBase
     {
         private ObservableCollection<SchoolClass> classes;
-        private ObservableCollection<string> studentsOfClass;
+        private ObservableCollection<Student> studentsOfClass;
         private StudentOfClassService studentOfClassService;
 
         private int selectedIndex;
@@ -25,7 +25,7 @@ namespace Kreta.ViewModel
             selectedIndex = 0;
             studentOfClassService = new StudentOfClassService();
             classes = new ObservableCollection<SchoolClass>();            
-            studentsOfClass = new ObservableCollection<string>();
+            studentsOfClass = new ObservableCollection<Student>();
         }
 
         public ObservableCollection<SchoolClass> Classes
@@ -38,9 +38,15 @@ namespace Kreta.ViewModel
             }
         }
 
-        public ObservableCollection<string> StudentsOfClass
+        public ObservableCollection<Student> StudentsOfClass
         {
-            get { return studentsOfClass; }
+            get 
+            {
+                List<Student> studentOfClassList = studentOfClassService.GetStudentOfClass(SchoolClass.Id);
+                studentsOfClass.Clear();
+                studentsOfClass = new ObservableCollection<Student>(studentOfClassList);
+                return studentsOfClass; 
+            }
         }
 
         public int SelectedIndex
@@ -53,6 +59,7 @@ namespace Kreta.ViewModel
             {
                 selectedIndex = value;
                 OnPropertyChanged("SelectedIndex");
+                OnPropertyChanged("StudentsOfClass");
             }
         }
 
