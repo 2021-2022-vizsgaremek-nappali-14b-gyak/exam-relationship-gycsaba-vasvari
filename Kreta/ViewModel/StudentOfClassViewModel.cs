@@ -64,13 +64,10 @@ namespace Kreta.ViewModel
                 {
                     return classes.ElementAt(selectedIndex);
                 }
+                else if ((selectedIndex < 0) && classes != null)
+                    return classes.ElementAt(0);
                 else
                     return null;
-            }
-            set
-            {
-                SchoolClass = value;
-                OnPropertyChanged("ScoolClass");
             }
         }
     }
