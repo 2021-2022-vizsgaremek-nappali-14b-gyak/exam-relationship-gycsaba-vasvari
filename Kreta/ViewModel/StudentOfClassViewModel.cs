@@ -40,7 +40,13 @@ namespace Kreta.ViewModel
 
         public ObservableCollection<Student> StudentsOfClass
         {
-            get { return studentsOfClass; }
+            get 
+            {
+                List<Student> studentOfClassList = studentOfClassService.GetStudentOfClass(SchoolClass.Id);
+                studentsOfClass.Clear();
+                studentsOfClass = new ObservableCollection<Student>(studentOfClassList);
+                return studentsOfClass; 
+            }
         }
 
         public int SelectedIndex
