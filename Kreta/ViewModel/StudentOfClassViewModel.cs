@@ -59,6 +59,7 @@ namespace Kreta.ViewModel
             {
                 selectedIndex = value;
                 OnPropertyChanged("SelectedIndex");
+                OnPropertyChanged("StudentsOfClass");
             }
         }
 
