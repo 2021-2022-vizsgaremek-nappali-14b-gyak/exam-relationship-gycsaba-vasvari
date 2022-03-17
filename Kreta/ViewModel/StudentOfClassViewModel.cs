@@ -56,6 +56,22 @@ namespace Kreta.ViewModel
             }
         }
 
-        public 
+        public SchoolClass SchoolClass
+        {
+            get
+            {
+                if ((selectedIndex >= 0) && (selectedIndex < classes.Count))
+                {
+                    return classes.ElementAt(selectedIndex);
+                }
+                else
+                    return null;
+            }
+            set
+            {
+                SchoolClass = value;
+                OnPropertyChanged("ScoolClass");
+            }
+        }
     }
 }
