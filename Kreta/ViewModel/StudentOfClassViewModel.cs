@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Kreta.Services;
 using ViewModels.BaseClass;
+using Kreta.Models;
 
 
 namespace Kreta.ViewModel
 {
     public class StudentOfClassViewModel : ViewModelBase
     {
-        private ObservableCollection<string> classes;
+        private ObservableCollection<Class> classes;
         private ObservableCollection<string> studentsOfClass;
         private StudentOfClassService studentOfClassService;
 
@@ -23,16 +24,16 @@ namespace Kreta.ViewModel
         {
             selectedIndex = 0;
             studentOfClassService = new StudentOfClassService();
-            classes = new ObservableCollection<string>();            
+            classes = new ObservableCollection<Class>();            
             studentsOfClass = new ObservableCollection<string>();
         }
 
-        public ObservableCollection<string> Classes
+        public ObservableCollection<Class> Classes
         {
             get 
             {
                 classes.Clear();
-                classes = new ObservableCollection<string>(studentOfClassService.Classes);
+                classes = new ObservableCollection<Class>(studentOfClassService.Classes);
                 return classes;
             }
         }
