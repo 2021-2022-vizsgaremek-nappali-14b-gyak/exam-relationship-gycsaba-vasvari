@@ -28,6 +28,7 @@ namespace Kreta.View.Page
         {
             this.studentOfClassViewModel = studentOfClassViewModel;
             InitializeComponent();
+            this.DataContext = studentOfClassViewModel;
         }
     }
 }
