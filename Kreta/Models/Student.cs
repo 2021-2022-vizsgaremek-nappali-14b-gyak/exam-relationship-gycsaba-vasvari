@@ -33,7 +33,7 @@ namespace Kreta.Models
 
         public override string ToString()
         {
-            string output = "Tanulók adatai: " + id + " "+fullname;
+            string output = id+". "+ fullname;
             return output;
         }
     }
