@@ -24,8 +24,14 @@
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10">
                 <TextBlock Margin="5">Nem besorolt diákok kezelése:</TextBlock>
-                <Button Margin="5" x:Name="btStudentNoClass" Content="Nem besorolt diákok" />
-                <ListBox Margin="5" x:Name="lbStudentNoClass"></ListBox>
+                <Button Margin="5" x:Name="btStudentNoClass" 
+                        Content="Nem besorolt diákok"
+                        Command="{Binding StudentNoClassCommand}"       
+                />
+                <ListBox Margin="5" x:Name="lbStudentNoClass"
+                         ItemsSource="{Binding StudentOfNoClass}"
+                         
+                 />
                 <Button Margin="5" x:Name="btStudentToClass" Content="Kiválasztott diák hozzáadása" />
             </StackPanel>
         </StackPanel>
