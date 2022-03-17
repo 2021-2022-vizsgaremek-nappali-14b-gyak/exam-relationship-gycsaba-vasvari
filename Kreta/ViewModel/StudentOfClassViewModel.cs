@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Collections.ObjectModel;
+using Kreta.Services;
 
 namespace Kreta.ViewModel
 {
@@ -12,16 +13,23 @@ namespace Kreta.ViewModel
     {
         private ObservableCollection<string> classes;
         private ObservableCollection<string> studentsOfClass;
+        private StudentOfClassService studentOfClassService;
 
         public StudentOfClassViewModel()
         {
-            classes = new ObservableCollection<string>();
+            studentOfClassService = new StudentOfClassService();
+            classes = new ObservableCollection<string>();            
             studentsOfClass = new ObservableCollection<string>();
         }
 
         public ObservableCollection<string> Classes
         {
-            get { return classes;}
+            get 
+            {
+                classes.Clear();
+                classes = new ObservableCollection<string>(studentOfClassService.Classes);
+                return classes;
+            }
         }
 
         public ObservableCollection<string> StudentsOfClass
