@@ -31,7 +31,7 @@ namespace Kreta.Services
         {
             // <"9.a" -> 12>
             Dictionary<string, int> studentPerClasses = new Dictionary<string, int>();
-            foreach(Class schoolClass in classesRepo.Classes)
+            foreach(SchoolClass schoolClass in classesRepo.Classes)
             {
                 // Az osztály id meghatározása
                 int classId = schoolClass.Id;

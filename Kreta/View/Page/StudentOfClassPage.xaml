@@ -13,6 +13,9 @@
                 <ComboBox x:Name="cbClasses" Margin="5"
                           ItemsSource="{Binding Classes}"
                           SelectedIndex="{Binding SelectedIndex}"
+                          SelectedValue="{Binding SchoolClass.Id, Mode=TwoWay}"
+                          SelectedValuePath="Id"
+                          DisplayMemberPath="GradeGradeType"
                 />
                 <TextBlock Margin="5">Az osztály tanulói</TextBlock>
                 <ListBox x:Name="lbStudents" Margin="5"

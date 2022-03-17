@@ -10,23 +10,23 @@ namespace Kreta.Repositories
 {
     public class ClassesRepo
     {
-        private List<Class> classes;
+        private List<SchoolClass> classes;
 
-        public List<Class> Classes { get => classes; }
+        public List<SchoolClass> Classes { get => classes; }
 
         public ClassesRepo()
         {
-            classes = new List<Class>();
+            classes = new List<SchoolClass>();
             MakeTestData();
         }
 
         public void MakeTestData()
         {
-            classes.Add(new Class(1, 9, 'a', 4));
-            classes.Add(new Class(2, 9, 'b', 1));
-            classes.Add(new Class(3, 10, 'a', 6));
-            classes.Add(new Class(4, 10, 'b', 3));
-            classes.Add(new Class(5, 10, 'c', 0));
+            classes.Add(new SchoolClass(1, 9, 'a', 4));
+            classes.Add(new SchoolClass(2, 9, 'b', 1));
+            classes.Add(new SchoolClass(3, 10, 'a', 6));
+            classes.Add(new SchoolClass(4, 10, 'b', 3));
+            classes.Add(new SchoolClass(5, 10, 'c', 0));
         }
     }
 }

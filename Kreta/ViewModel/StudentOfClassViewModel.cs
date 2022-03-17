@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Kreta.Services;
 using ViewModels.BaseClass;
+using Kreta.Models;
 
 
 namespace Kreta.ViewModel
 {
     public class StudentOfClassViewModel : ViewModelBase
     {
-        private ObservableCollection<string> classes;
+        private ObservableCollection<SchoolClass> classes;
         private ObservableCollection<string> studentsOfClass;
         private StudentOfClassService studentOfClassService;
 
@@ -23,16 +24,16 @@ namespace Kreta.ViewModel
         {
             selectedIndex = 0;
             studentOfClassService = new StudentOfClassService();
-            classes = new ObservableCollection<string>();            
+            classes = new ObservableCollection<SchoolClass>();            
             studentsOfClass = new ObservableCollection<string>();
         }
 
-        public ObservableCollection<string> Classes
+        public ObservableCollection<SchoolClass> Classes
         {
             get 
             {
                 classes.Clear();
-                classes = new ObservableCollection<string>(studentOfClassService.Classes);
+                classes = new ObservableCollection<SchoolClass>(studentOfClassService.Classes);
                 return classes;
             }
         }
@@ -52,6 +53,21 @@ namespace Kreta.ViewModel
             {
                 selectedIndex = value;
                 OnPropertyChanged("SelectedIndex");
+            }
+        }
+
+        public SchoolClass SchoolClass
+        {
+            get
+            {
+                if ((selectedIndex >= 0) && (selectedIndex < classes.Count))
+                {
+                    return classes.ElementAt(selectedIndex);
+                }
+                else if ((selectedIndex < 0) && classes != null)
+                    return classes.ElementAt(0);
+                else
+                    return null;
             }
         }
     }
