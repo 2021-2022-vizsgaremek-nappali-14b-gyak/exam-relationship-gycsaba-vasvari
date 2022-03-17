@@ -12,10 +12,11 @@
                 <TextBlock Margin="5">Válassza ki az osztályt:</TextBlock>
                 <ComboBox x:Name="cbClasses" Margin="5"
                           ItemsSource="{Binding Classes}"
+                          SelectedIndex="{Binding SelectedIndex}"
                 />
                 <TextBlock Margin="5">Az osztály tanulói</TextBlock>
                 <ListBox x:Name="lbStudents" Margin="5"
-                         ItemsSource="{Binding StudentsOfClass}"
+                         ItemsSource="{Binding StudentsOfClass}"                         
                 />
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10">
