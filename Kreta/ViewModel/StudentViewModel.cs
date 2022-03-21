@@ -11,14 +11,14 @@ namespace Kreta.ViewModel
 {
     public class StudentViewModel
     {
-        private StudentsRepo students;
-        private ObservableCollection<Student> students2;
+        private StudentsRepo studentsRepo;
+        private ObservableCollection<Student> students;
 
         public StudentViewModel()
         {
-            students = new StudentsRepo();
-            students2 = new ObservableCollection<Student>(students.Students);
+            studentsRepo = new StudentsRepo();
+            students = new ObservableCollection<Student>(studentsRepo.Students);
         }
-        public ObservableCollection<Student> Student { get => students2; set => students2 = value; }
+        public ObservableCollection<Student> Students { get => students; set => students = value; }
     }
 }

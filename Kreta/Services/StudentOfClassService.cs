@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Kreta.Models;
 using Kreta.Repositories;
-using Kreta.Models;
+using System.Collections.Generic;
 
 namespace Kreta.Services
 {
     class StudentOfClassService
     {
-        ClassesRepo classesRepo;
+        SchoolClassesRepo schoolClassesRepo
+            ;
         StudentsRepo studentsRepo;
 
         public StudentOfClassService()
         {
-            classesRepo = new ClassesRepo();
+            schoolClassesRepo = new SchoolClassesRepo();
             studentsRepo = new StudentsRepo();
         }
 
@@ -24,7 +20,7 @@ namespace Kreta.Services
         {
             get 
             {
-                return classesRepo.Classes;
+                return schoolClassesRepo.SchoolClasses;
             }
         }
 

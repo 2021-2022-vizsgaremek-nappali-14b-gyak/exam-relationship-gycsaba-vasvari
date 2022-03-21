@@ -8,13 +8,13 @@ using Kreta.Models;
 
 namespace Kreta.Repositories
 {
-    public class ClassesRepo
+    public class SchoolClassesRepo
     {
         private List<SchoolClass> classes;
 
-        public List<SchoolClass> Classes { get => classes; }
+        public List<SchoolClass> SchoolClasses { get => classes; }
 
-        public ClassesRepo()
+        public SchoolClassesRepo()
         {
             classes = new List<SchoolClass>();
             MakeTestData();

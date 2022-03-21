@@ -14,7 +14,7 @@ namespace Kreta.ViewModel
 {
     public class StudentOfClassViewModel : ViewModelBase
     {
-        private ObservableCollection<SchoolClass> classes;
+        private ObservableCollection<SchoolClass> schoolClasses;
         private ObservableCollection<Student> studentsOfClass;
         private ObservableCollection<Student> studentOfNoClass;
 
@@ -29,18 +29,18 @@ namespace Kreta.ViewModel
 
 
             studentOfClassService = new StudentOfClassService();
-            classes = new ObservableCollection<SchoolClass>();            
+            schoolClasses = new ObservableCollection<SchoolClass>();            
             studentsOfClass = new ObservableCollection<Student>();
             studentOfNoClass = new ObservableCollection<Student>();
         }
 
-        public ObservableCollection<SchoolClass> Classes
+        public ObservableCollection<SchoolClass> SchoolClasses
         {
             get 
             {
-                classes.Clear();
-                classes = new ObservableCollection<SchoolClass>(studentOfClassService.Classes);
-                return classes;
+                schoolClasses.Clear();
+                schoolClasses = new ObservableCollection<SchoolClass>(studentOfClassService.Classes);
+                return schoolClasses;
             }
         }
 
@@ -73,12 +73,12 @@ namespace Kreta.ViewModel
         {
             get
             {
-                if ((selectedIndex >= 0) && (selectedIndex < classes.Count))
+                if ((selectedIndex >= 0) && (selectedIndex < schoolClasses.Count))
                 {
-                    return classes.ElementAt(selectedIndex);
+                    return schoolClasses.ElementAt(selectedIndex);
                 }
-                else if ((selectedIndex < 0) && classes != null)
-                    return classes.ElementAt(0);
+                else if ((selectedIndex < 0) && schoolClasses != null)
+                    return schoolClasses.ElementAt(0);
                 else
                     return null;
             }
@@ -100,10 +100,5 @@ namespace Kreta.ViewModel
                 return studentOfNoClass;
             }
         }
-
-
-
-
-
     }
 }

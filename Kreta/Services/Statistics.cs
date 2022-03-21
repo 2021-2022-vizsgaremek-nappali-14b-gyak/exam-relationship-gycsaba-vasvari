@@ -11,13 +11,13 @@ namespace Kreta.Services
 {
     public class Statistics
     {
-        private ClassesRepo classesRepo;
+        private SchoolClassesRepo schoolClassesRepo;
         private StudentsRepo studentsRepo;
         private SubjectRepo subjectRepo;
 
         public Statistics()
         {
-            classesRepo = new ClassesRepo();
+            schoolClassesRepo = new SchoolClassesRepo();
             studentsRepo = new StudentsRepo();
             subjectRepo = new SubjectRepo();
         }
@@ -31,7 +31,7 @@ namespace Kreta.Services
         {
             // <"9.a" -> 12>
             Dictionary<string, int> studentPerClasses = new Dictionary<string, int>();
-            foreach(SchoolClass schoolClass in classesRepo.Classes)
+            foreach(SchoolClass schoolClass in schoolClassesRepo.SchoolClasses)
             {
                 // Az osztály id meghatározása
                 int classId = schoolClass.Id;
